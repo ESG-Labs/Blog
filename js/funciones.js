@@ -37,7 +37,7 @@ function clear(){
 function ver(){
     let posts='';
     $(postView).each(function(key,val){
-       posts    += '<div><div><h1>'+val.titulo+'</h1></div><div><label>'+val.descripcion+'</label></div><div><button type="submit" class="verpos" data-ver="'+key+'">ver</button></div></div>'
+       posts    += '<div><div><h1>'+val.titulo+'</h1></div><div><label>'+val.descripcion+'</label></div><div><button type="submit" class="verpos" ver="'+key+'">ver</button></div></div>'
 
     });
     $("#verpost").html(posts);
@@ -61,14 +61,14 @@ $(document).on('click','#Npost',()=>{
     $("#postss").hide();;
     //window.location.href = "index.html";
 });
-$(document).on('click','.verpos',(e,a,b)=>{
-    var pa = $(this).attr("data");
-
+$(document).on('click','.verpos',function(){
+    var pa = $(this).attr("ver");
+debugger;
     $("#editorrr").hide();
     $("#verpost").hide();
     $("#postss").show();
     
-    debugger
+    debugger;
     verpost(pa);
     //window.location.href = "index.html";
 });
